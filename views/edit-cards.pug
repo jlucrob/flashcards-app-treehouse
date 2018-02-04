@@ -1,0 +1,26 @@
+extends layout
+
+block editCards
+  a(href='/') Back to home page
+  div#currentTopics Current Topics:
+    ul
+      each val, index in studycards
+        li #{val.title}
+          each cardVal in val.cards
+            ul
+              li Q: #{cardVal.question}
+              li H: #{cardVal.hint}
+              li A: #{cardVal.answer}
+  div(style="margin-bottom: 20px")
+  div#newTopic Add new Topic:
+    form#addForm(method="POST", action="/edit-cards")
+      label Topic
+      input(type="text", required, name="newTopicTitle")
+      div#addQuestionDiv
+        button#addQuestion(type="button", name="addNewQuestions") Add a question
+      button#addTopic(type="submit", name="addNewTopicSubmit") Add topic
+  div(style="margin-bottom: 40px")
+  div#delTopic Delete Topic:
+    input#delTopicInput(type="text", name="delTopicTitle")
+    button#delTopicBtn(type="button", name="delTopicBtn") Delete topic
+  script(src='/static/js/editCards.js')

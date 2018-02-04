@@ -1,0 +1,21 @@
+extends app
+
+block card
+  section(class=`flashcards`)
+    .card(class=`card-${side}`)
+      .card-header
+      h1.card-title= studyTopicTitle
+      a(href='/') Switch topic
+      h1.card-title= side
+      #content
+        h2= text
+        if hint
+          p.hint
+            i= hint
+      .card-flip-wrap
+        a(href=`/cards/${studyTopicIndex}/${cardId}?side=${switchSide}`)
+          img.card-flip(src='/static/img/flip.svg')
+      .card-next
+        a(href=`/cards/${studyTopicIndex}`)
+          img(src="/static/img/next.svg")
+    script(src='/static/js/app.js')

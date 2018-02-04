@@ -1,0 +1,11 @@
+extends app.pug
+
+block intro
+  h1.namecard-prompt Let's get started
+  h1.namecard-prompt Choose a study topic!
+  form(action='/cards', method='GET')
+    each val, index in studycards 
+      input(type='radio', name='studyTopicIndex', value=`${index}`)
+      | #{val.title}
+    button.namecard-submit(type='submit') Begin!
+  a(href='/edit-cards') Edit study cards
