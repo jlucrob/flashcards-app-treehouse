@@ -3,6 +3,15 @@ Flashcard study app, as taught by Treehouse in the "Express Basics" course (http
 
 Using Express, Mongoose, Pug and DB on MongoDB Atlas.
 
+To run the app locally:
+
+- Download all files
+
+- Use "npm install" to install dependencies
+
+- Use "node app.js" to start the app on http://localhost:3000/
+
+
 Notes: 
 
 Most of the code was done during the course "Express Basics" course on Treehouse.
